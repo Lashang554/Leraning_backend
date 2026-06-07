@@ -9,3 +9,35 @@ This repository contains my daily backend development learning progress.
 - MongoDB
 - Mongoose
 - REST API
+
+## Current Project
+
+A simple Express API is included in `src/server.js`.
+
+### Available Endpoints
+
+- `GET /` - API welcome message
+- `GET /health` - server health status
+- `GET /api/topics` - backend learning topics
+
+## How to Run
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the server:
+
+```bash
+npm start
+```
+
+For development with auto-restart:
+
+```bash
+npm run dev
+```
+
+The server runs on `http://localhost:3000` by default.
