@@ -1,4 +1,9 @@
 const express = require("express");
+const {
+  getDay2Summary,
+  getTasksByTopic,
+  getTaskById,
+} = require("./day2Practice");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -26,7 +31,7 @@ const learningTopics = [
 app.get("/", (req, res) => {
   res.json({
     message: "Backend Learning API",
-    endpoints: ["/health", "/api/topics"],
+    endpoints: ["/health", "/api/topics", "/api/day-2", "/api/day-2/tasks"],
   });
 });
 
@@ -42,6 +47,31 @@ app.get("/api/topics", (req, res) => {
     count: learningTopics.length,
     topics: learningTopics,
   });
+});
+
+app.get("/api/day-2", (req, res) => {
+  res.json(getDay2Summary());
+});
+
+app.get("/api/day-2/tasks", (req, res) => {
+  const tasks = getTasksByTopic(req.query.topic);
+
+  res.json({
+    count: tasks.length,
+    tasks,
+  });
+});
+
+app.get("/api/day-2/tasks/:id", (req, res) => {
+  const task = getTaskById(req.params.id);
+
+  if (!task) {
+    return res.status(404).json({
+      message: "Task not found",
+    });
+  }
+
+  return res.json(task);
 });
 
 app.listen(PORT, () => {

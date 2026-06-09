@@ -19,6 +19,22 @@ A simple Express API is included in `src/server.js`.
 - `GET /` - API welcome message
 - `GET /health` - server health status
 - `GET /api/topics` - backend learning topics
+- `GET /api/day-2` - Day 2 practice summary
+- `GET /api/day-2/tasks` - Day 2 task list
+- `GET /api/day-2/tasks?topic=routing` - filter Day 2 tasks by topic
+- `GET /api/day-2/tasks/:id` - single Day 2 task by id
+
+## Daily Practice
+
+### Day 2
+
+Day 2 practice is focused on:
+
+- Creating multiple Express routes
+- Returning JSON data from helper functions
+- Reading query parameters with `req.query`
+- Reading route parameters with `req.params`
+- Sending a `404` response when a record is not found
 
 ## How to Run
 
