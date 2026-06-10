@@ -58,8 +58,8 @@ function getCompletedDay3Tasks() {
 function createPracticeNote(note) {
   const newNote = {
     id: practiceNotes.length + 1,
-    title: note.title,
-    content: note.content,
+    title: note.title.trim(),
+    content: note.content.trim(),
     createdAt: new Date().toISOString(),
   };
 
