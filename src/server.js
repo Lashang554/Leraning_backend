@@ -4,11 +4,36 @@ const {
   getTasksByTopic,
   getTaskById,
 } = require("./day2Practice");
+const {
+  getDay3Summary,
+  getDay3TasksByTopic,
+  createPracticeNote,
+  getPracticeNotes,
+} = require("./day3Practice");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
+
+function logRequest(req, res, next) {
+  console.log(`${req.method} ${req.path}`);
+  next();
+}
+
+function validatePracticeNote(req, res, next) {
+  const { title, content } = req.body;
+
+  if (!title || !content) {
+    return res.status(400).json({
+      message: "Title and content are required",
+    });
+  }
+
+  return next();
+}
+
+app.use(logRequest);
 
 const learningTopics = [
   {
@@ -31,7 +56,15 @@ const learningTopics = [
 app.get("/", (req, res) => {
   res.json({
     message: "Backend Learning API",
-    endpoints: ["/health", "/api/topics", "/api/day-2", "/api/day-2/tasks"],
+    endpoints: [
+      "/health",
+      "/api/topics",
+      "/api/day-2",
+      "/api/day-2/tasks",
+      "/api/day-3",
+      "/api/day-3/tasks",
+      "/api/day-3/notes",
+    ],
   });
 });
 
@@ -72,6 +105,34 @@ app.get("/api/day-2/tasks/:id", (req, res) => {
   }
 
   return res.json(task);
+});
+
+app.get("/api/day-3", (req, res) => {
+  res.json(getDay3Summary());
+});
+
+app.get("/api/day-3/tasks", (req, res) => {
+  const tasks = getDay3TasksByTopic(req.query.topic);
+
+  res.json({
+    count: tasks.length,
+    tasks,
+  });
+});
+
+app.get("/api/day-3/notes", (req, res) => {
+  const notes = getPracticeNotes();
+
+  res.json({
+    count: notes.length,
+    notes,
+  });
+});
+
+app.post("/api/day-3/notes", validatePracticeNote, (req, res) => {
+  const note = createPracticeNote(req.body);
+
+  res.status(201).json(note);
 });
 
 app.listen(PORT, () => {
