@@ -55,6 +55,12 @@ function getCompletedDay3Tasks() {
   return day3Tasks.filter((task) => task.completed);
 }
 
+function getDay3ProgressLabel() {
+  const completedCount = getCompletedDay3Tasks().length;
+
+  return `${completedCount}/${day3Tasks.length} tasks completed`;
+}
+
 function createPracticeNote(note) {
   const newNote = {
     id: practiceNotes.length + 1,
@@ -77,6 +83,7 @@ module.exports = {
   getDay3Summary,
   getDay3TasksByTopic,
   getCompletedDay3Tasks,
+  getDay3ProgressLabel,
   createPracticeNote,
   getPracticeNotes,
 };
