@@ -51,6 +51,10 @@ function getDay3TasksByTopic(topic) {
   return day3Tasks.filter((task) => task.topic === topic.toLowerCase());
 }
 
+function getCompletedDay3Tasks() {
+  return day3Tasks.filter((task) => task.completed);
+}
+
 function createPracticeNote(note) {
   const newNote = {
     id: practiceNotes.length + 1,
@@ -72,6 +76,7 @@ module.exports = {
   day3Tasks,
   getDay3Summary,
   getDay3TasksByTopic,
+  getCompletedDay3Tasks,
   createPracticeNote,
   getPracticeNotes,
 };
