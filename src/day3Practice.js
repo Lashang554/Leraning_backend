@@ -3,24 +3,28 @@ const day3Tasks = [
     id: 1,
     title: "Create reusable middleware",
     topic: "middleware",
+    difficulty: "beginner",
     completed: true,
   },
   {
     id: 2,
     title: "Read JSON request bodies",
     topic: "request",
+    difficulty: "beginner",
     completed: true,
   },
   {
     id: 3,
     title: "Validate required fields",
     topic: "validation",
+    difficulty: "intermediate",
     completed: false,
   },
   {
     id: 4,
     title: "Return the correct status codes",
     topic: "response",
+    difficulty: "intermediate",
     completed: false,
   },
 ];
