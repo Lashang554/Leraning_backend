@@ -10,6 +10,12 @@ const {
   createPracticeNote,
   getPracticeNotes,
 } = require("./day3Practice");
+const {
+  getDay4Summary,
+  getDay4Projects,
+  getDay4ProjectById,
+  getDay4Checklist,
+} = require("./day4Practice");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -64,6 +70,9 @@ app.get("/", (req, res) => {
       "/api/day-3",
       "/api/day-3/tasks",
       "/api/day-3/notes",
+      "/api/day-4",
+      "/api/day-4/projects",
+      "/api/day-4/checklist",
     ],
   });
 });
@@ -133,6 +142,40 @@ app.post("/api/day-3/notes", validatePracticeNote, (req, res) => {
   const note = createPracticeNote(req.body);
 
   res.status(201).json(note);
+});
+
+app.get("/api/day-4", (req, res) => {
+  res.json(getDay4Summary());
+});
+
+app.get("/api/day-4/projects", (req, res) => {
+  const projects = getDay4Projects(req.query.topic);
+
+  res.json({
+    count: projects.length,
+    projects,
+  });
+});
+
+app.get("/api/day-4/projects/:id", (req, res) => {
+  const project = getDay4ProjectById(req.params.id);
+
+  if (!project) {
+    return res.status(404).json({
+      message: "Project not found",
+    });
+  }
+
+  return res.json(project);
+});
+
+app.get("/api/day-4/checklist", (req, res) => {
+  const checklist = getDay4Checklist();
+
+  res.json({
+    count: checklist.length,
+    checklist,
+  });
 });
 
 app.listen(PORT, () => {
