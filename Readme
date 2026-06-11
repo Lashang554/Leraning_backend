@@ -28,6 +28,11 @@ A simple Express API is included in `src/server.js`.
 - `GET /api/day-3/tasks?topic=middleware` - filter Day 3 tasks by topic
 - `GET /api/day-3/notes` - list Day 3 practice notes
 - `POST /api/day-3/notes` - create a Day 3 practice note
+- `GET /api/day-4` - Day 4 practice summary
+- `GET /api/day-4/projects` - Day 4 project list
+- `GET /api/day-4/projects?topic=crud` - filter Day 4 projects by topic
+- `GET /api/day-4/projects/:id` - single Day 4 project by id
+- `GET /api/day-4/checklist` - Day 4 checklist items
 
 ## Daily Practice
 
@@ -50,6 +55,16 @@ Day 3 practice is focused on:
 - Reading JSON request bodies
 - Validating required request fields
 - Sending `400` and `201` responses
+
+### Day 4
+
+Day 4 practice is focused on:
+
+- Modeling project resources with plain JavaScript data
+- Building REST-style project endpoints
+- Filtering records with query parameters
+- Looking up records with route parameters
+- Returning `404` responses for missing project records
 
 ## How to Run
 
