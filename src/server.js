@@ -16,7 +16,11 @@ const {
   getDay4ProjectById,
   getDay4Checklist,
 } = require("./day4Practice");
-const { getDay5Summary, getDay5Lessons } = require("./day5Practice");
+const {
+  getDay5Summary,
+  getDay5Lessons,
+  getDay5LessonById,
+} = require("./day5Practice");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -190,6 +194,18 @@ app.get("/api/day-5/lessons", (req, res) => {
     count: lessons.length,
     lessons,
   });
+});
+
+app.get("/api/day-5/lessons/:id", (req, res) => {
+  const lesson = getDay5LessonById(req.params.id);
+
+  if (!lesson) {
+    return res.status(404).json({
+      message: "Lesson not found",
+    });
+  }
+
+  return res.json(lesson);
 });
 
 app.listen(PORT, () => {
