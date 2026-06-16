@@ -87,6 +87,23 @@ function getDay5StudySessions(type) {
   );
 }
 
+function getDay5Progress() {
+  const completedLessons = day5Lessons.filter((lesson) => lesson.completed);
+  const completedSessions = day5StudySessions.filter(
+    (session) => session.completed
+  );
+  const plannedMinutes = day5StudySessions.reduce(
+    (total, session) => total + session.minutes,
+    0
+  );
+
+  return {
+    lessonProgress: `${completedLessons.length}/${day5Lessons.length}`,
+    sessionProgress: `${completedSessions.length}/${day5StudySessions.length}`,
+    plannedMinutes,
+  };
+}
+
 module.exports = {
   day5Lessons,
   day5StudySessions,
@@ -94,4 +111,5 @@ module.exports = {
   getDay5Lessons,
   getDay5LessonById,
   getDay5StudySessions,
+  getDay5Progress,
 };
