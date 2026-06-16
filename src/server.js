@@ -16,6 +16,7 @@ const {
   getDay4ProjectById,
   getDay4Checklist,
 } = require("./day4Practice");
+const { getDay5Summary } = require("./day5Practice");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -176,6 +177,10 @@ app.get("/api/day-4/checklist", (req, res) => {
     count: checklist.length,
     checklist,
   });
+});
+
+app.get("/api/day-5", (req, res) => {
+  res.json(getDay5Summary());
 });
 
 app.listen(PORT, () => {
