@@ -77,10 +77,21 @@ function getDay5LessonById(id) {
   return day5Lessons.find((lesson) => lesson.id === Number(id));
 }
 
+function getDay5StudySessions(type) {
+  if (!type) {
+    return day5StudySessions;
+  }
+
+  return day5StudySessions.filter(
+    (session) => session.type === type.toLowerCase()
+  );
+}
+
 module.exports = {
   day5Lessons,
   day5StudySessions,
   getDay5Summary,
   getDay5Lessons,
   getDay5LessonById,
+  getDay5StudySessions,
 };
