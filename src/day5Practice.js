@@ -41,7 +41,16 @@ function getDay5Summary() {
   };
 }
 
+function getDay5Lessons(topic) {
+  if (!topic) {
+    return day5Lessons;
+  }
+
+  return day5Lessons.filter((lesson) => lesson.topic === topic.toLowerCase());
+}
+
 module.exports = {
   day5Lessons,
   getDay5Summary,
+  getDay5Lessons,
 };
