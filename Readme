@@ -33,6 +33,13 @@ A simple Express API is included in `src/server.js`.
 - `GET /api/day-4/projects?topic=crud` - filter Day 4 projects by topic
 - `GET /api/day-4/projects/:id` - single Day 4 project by id
 - `GET /api/day-4/checklist` - Day 4 checklist items
+- `GET /api/day-5` - Day 5 practice summary
+- `GET /api/day-5/lessons` - Day 5 lesson list
+- `GET /api/day-5/lessons?topic=database` - filter Day 5 lessons by topic
+- `GET /api/day-5/lessons/:id` - single Day 5 lesson by id
+- `GET /api/day-5/sessions` - Day 5 study sessions
+- `GET /api/day-5/sessions?type=crud` - filter Day 5 sessions by type
+- `GET /api/day-5/progress` - Day 5 progress details
 
 ## Daily Practice
 
@@ -65,6 +72,16 @@ Day 4 practice is focused on:
 - Filtering records with query parameters
 - Looking up records with route parameters
 - Returning `404` responses for missing project records
+
+### Day 5
+
+Day 5 practice is focused on:
+
+- Planning MongoDB document fields before coding models
+- Understanding Mongoose-style models and collections
+- Designing database-backed CRUD flows
+- Filtering study sessions with query parameters
+- Tracking lesson and session progress
 
 ## How to Run
 
