@@ -29,6 +29,30 @@ const day5Lessons = [
   },
 ];
 
+const day5StudySessions = [
+  {
+    id: 1,
+    title: "Sketch database fields for a learning topic",
+    minutes: 25,
+    type: "planning",
+    completed: true,
+  },
+  {
+    id: 2,
+    title: "Map API request body to model fields",
+    minutes: 30,
+    type: "crud",
+    completed: false,
+  },
+  {
+    id: 3,
+    title: "Write validation rules for required data",
+    minutes: 20,
+    type: "validation",
+    completed: false,
+  },
+];
+
 function getDay5Summary() {
   const completedCount = day5Lessons.filter((lesson) => lesson.completed).length;
 
@@ -55,6 +79,7 @@ function getDay5LessonById(id) {
 
 module.exports = {
   day5Lessons,
+  day5StudySessions,
   getDay5Summary,
   getDay5Lessons,
   getDay5LessonById,
