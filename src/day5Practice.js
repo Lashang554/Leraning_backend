@@ -49,8 +49,13 @@ function getDay5Lessons(topic) {
   return day5Lessons.filter((lesson) => lesson.topic === topic.toLowerCase());
 }
 
+function getDay5LessonById(id) {
+  return day5Lessons.find((lesson) => lesson.id === Number(id));
+}
+
 module.exports = {
   day5Lessons,
   getDay5Summary,
   getDay5Lessons,
+  getDay5LessonById,
 };
