@@ -20,6 +20,8 @@ const {
   getDay5Summary,
   getDay5Lessons,
   getDay5LessonById,
+  getDay5StudySessions,
+  getDay5Progress,
 } = require("./day5Practice");
 
 const app = express();
@@ -78,6 +80,10 @@ app.get("/", (req, res) => {
       "/api/day-4",
       "/api/day-4/projects",
       "/api/day-4/checklist",
+      "/api/day-5",
+      "/api/day-5/lessons",
+      "/api/day-5/sessions",
+      "/api/day-5/progress",
     ],
   });
 });
@@ -206,6 +212,19 @@ app.get("/api/day-5/lessons/:id", (req, res) => {
   }
 
   return res.json(lesson);
+});
+
+app.get("/api/day-5/sessions", (req, res) => {
+  const sessions = getDay5StudySessions(req.query.type);
+
+  res.json({
+    count: sessions.length,
+    sessions,
+  });
+});
+
+app.get("/api/day-5/progress", (req, res) => {
+  res.json(getDay5Progress());
 });
 
 app.listen(PORT, () => {
