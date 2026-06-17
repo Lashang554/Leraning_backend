@@ -58,9 +58,14 @@ function getDay6Tasks(topic) {
   return day6Tasks.filter((task) => task.topic === topic.toLowerCase());
 }
 
+function getDay6TaskById(id) {
+  return day6Tasks.find((task) => task.id === Number(id));
+}
+
 module.exports = {
   day6Tasks,
   day6Checklist,
   getDay6Summary,
   getDay6Tasks,
+  getDay6TaskById,
 };
