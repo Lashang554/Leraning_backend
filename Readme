@@ -89,6 +89,16 @@ Day 5 practice is focused on:
 - Filtering study sessions with query parameters
 - Tracking lesson and session progress
 
+### Day 6
+
+Day 6 practice is focused on:
+
+- Understanding the difference between authentication and authorization
+- Planning secure password handling before storing user records
+- Designing JWT payloads, expiry, and protected route middleware
+- Mapping user roles to allowed API actions
+- Tracking auth task and checklist progress
+
 ## How to Run
 
 Install dependencies:
