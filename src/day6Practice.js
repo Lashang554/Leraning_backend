@@ -87,6 +87,17 @@ function getDay6Checklist() {
   return day6Checklist;
 }
 
+function getDay6Progress() {
+  const completedTasks = day6Tasks.filter((task) => task.completed);
+  const completedChecklistItems = day6Checklist.filter((item) => item.done);
+
+  return {
+    taskProgress: `${completedTasks.length}/${day6Tasks.length}`,
+    checklistProgress: `${completedChecklistItems.length}/${day6Checklist.length}`,
+    nextFocus: "Protect routes with token verification middleware",
+  };
+}
+
 module.exports = {
   day6Tasks,
   day6Checklist,
@@ -94,4 +105,5 @@ module.exports = {
   getDay6Tasks,
   getDay6TaskById,
   getDay6Checklist,
+  getDay6Progress,
 };
