@@ -50,8 +50,17 @@ function getDay6Summary() {
   };
 }
 
+function getDay6Tasks(topic) {
+  if (!topic) {
+    return day6Tasks;
+  }
+
+  return day6Tasks.filter((task) => task.topic === topic.toLowerCase());
+}
+
 module.exports = {
   day6Tasks,
   day6Checklist,
   getDay6Summary,
+  getDay6Tasks,
 };
