@@ -36,7 +36,28 @@ const day6Tasks = [
   },
 ];
 
-const day6Checklist = [];
+const day6Checklist = [
+  {
+    id: 1,
+    item: "Create user registration route plan",
+    done: true,
+  },
+  {
+    id: 2,
+    item: "Create login route plan",
+    done: true,
+  },
+  {
+    id: 3,
+    item: "Add token verification middleware notes",
+    done: false,
+  },
+  {
+    id: 4,
+    item: "Add role-based authorization notes",
+    done: false,
+  },
+];
 
 function getDay6Summary() {
   const completedCount = day6Tasks.filter((task) => task.completed).length;
@@ -62,10 +83,15 @@ function getDay6TaskById(id) {
   return day6Tasks.find((task) => task.id === Number(id));
 }
 
+function getDay6Checklist() {
+  return day6Checklist;
+}
+
 module.exports = {
   day6Tasks,
   day6Checklist,
   getDay6Summary,
   getDay6Tasks,
   getDay6TaskById,
+  getDay6Checklist,
 };
