@@ -40,6 +40,12 @@ A simple Express API is included in `src/server.js`.
 - `GET /api/day-5/sessions` - Day 5 study sessions
 - `GET /api/day-5/sessions?type=crud` - filter Day 5 sessions by type
 - `GET /api/day-5/progress` - Day 5 progress details
+- `GET /api/day-6` - Day 6 practice summary
+- `GET /api/day-6/tasks` - Day 6 task list
+- `GET /api/day-6/tasks?topic=tokens` - filter Day 6 tasks by topic
+- `GET /api/day-6/tasks/:id` - single Day 6 task by id
+- `GET /api/day-6/checklist` - Day 6 authentication checklist
+- `GET /api/day-6/progress` - Day 6 progress details
 
 ## Daily Practice
 
