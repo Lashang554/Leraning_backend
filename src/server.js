@@ -30,6 +30,13 @@ const {
   getDay6Checklist,
   getDay6Progress,
 } = require("./day6Practice");
+const {
+  getDay7Summary,
+  getDay7Tasks,
+  getDay7TaskById,
+  getDay7Checklist,
+  getDay7Progress,
+} = require("./day7Practice");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -95,6 +102,10 @@ app.get("/", (req, res) => {
       "/api/day-6/tasks",
       "/api/day-6/checklist",
       "/api/day-6/progress",
+      "/api/day-7",
+      "/api/day-7/tasks",
+      "/api/day-7/checklist",
+      "/api/day-7/progress",
     ],
   });
 });
@@ -274,6 +285,44 @@ app.get("/api/day-6/checklist", (req, res) => {
 
 app.get("/api/day-6/progress", (req, res) => {
   res.json(getDay6Progress());
+});
+
+app.get("/api/day-7", (req, res) => {
+  res.json(getDay7Summary());
+});
+
+app.get("/api/day-7/tasks", (req, res) => {
+  const tasks = getDay7Tasks(req.query.topic);
+
+  res.json({
+    count: tasks.length,
+    tasks,
+  });
+});
+
+app.get("/api/day-7/tasks/:id", (req, res) => {
+  const task = getDay7TaskById(req.params.id);
+
+  if (!task) {
+    return res.status(404).json({
+      message: "Task not found",
+    });
+  }
+
+  return res.json(task);
+});
+
+app.get("/api/day-7/checklist", (req, res) => {
+  const checklist = getDay7Checklist();
+
+  res.json({
+    count: checklist.length,
+    checklist,
+  });
+});
+
+app.get("/api/day-7/progress", (req, res) => {
+  res.json(getDay7Progress());
 });
 
 app.listen(PORT, () => {
