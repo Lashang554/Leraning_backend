@@ -36,6 +36,29 @@ const day7Tasks = [
   },
 ];
 
+const day7Checklist = [
+  {
+    id: 1,
+    item: "Use one error JSON shape across routes",
+    done: true,
+  },
+  {
+    id: 2,
+    item: "Return helpful messages for missing records",
+    done: true,
+  },
+  {
+    id: 3,
+    item: "Keep validation errors clear for API clients",
+    done: false,
+  },
+  {
+    id: 4,
+    item: "Review async handlers before adding database calls",
+    done: false,
+  },
+];
+
 function getDay7Summary() {
   const completedCount = day7Tasks.filter((task) => task.completed).length;
 
@@ -60,9 +83,27 @@ function getDay7TaskById(id) {
   return day7Tasks.find((task) => task.id === Number(id));
 }
 
+function getDay7Checklist() {
+  return day7Checklist;
+}
+
+function getDay7Progress() {
+  const completedTasks = day7Tasks.filter((task) => task.completed);
+  const completedChecklistItems = day7Checklist.filter((item) => item.done);
+
+  return {
+    taskProgress: `${completedTasks.length}/${day7Tasks.length}`,
+    checklistProgress: `${completedChecklistItems.length}/${day7Checklist.length}`,
+    nextFocus: "Add reusable error middleware when async routes are introduced",
+  };
+}
+
 module.exports = {
   day7Tasks,
+  day7Checklist,
   getDay7Summary,
   getDay7Tasks,
   getDay7TaskById,
+  getDay7Checklist,
+  getDay7Progress,
 };
