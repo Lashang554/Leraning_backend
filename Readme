@@ -105,6 +105,16 @@ Day 6 practice is focused on:
 - Mapping user roles to allowed API actions
 - Tracking auth task and checklist progress
 
+### Day 7
+
+Day 7 practice is focused on:
+
+- Creating consistent JSON error responses
+- Planning not-found behavior for missing API resources
+- Mapping validation failures to clear `400` responses
+- Preparing async route handlers for future database calls
+- Tracking API reliability checks before deployment
+
 ## How to Run
 
 Install dependencies:
