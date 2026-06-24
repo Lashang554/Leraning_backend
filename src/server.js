@@ -85,6 +85,11 @@ const learningTopics = [
     title: "MongoDB with Mongoose",
     status: "planned",
   },
+  {
+    id: 4,
+    title: "Deployment and production readiness",
+    status: "planned",
+  },
 ];
 
 app.get("/", (req, res) => {
