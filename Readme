@@ -52,6 +52,12 @@ A simple Express API is included in `src/server.js`.
 - `GET /api/day-7/tasks/:id` - single Day 7 task by id
 - `GET /api/day-7/checklist` - Day 7 reliability checklist
 - `GET /api/day-7/progress` - Day 7 progress details
+- `GET /api/day-8` - Day 8 practice summary
+- `GET /api/day-8/tasks` - Day 8 task list
+- `GET /api/day-8/tasks?topic=environment` - filter Day 8 tasks by topic
+- `GET /api/day-8/tasks/:id` - single Day 8 task by id
+- `GET /api/day-8/checklist` - Day 8 deployment checklist
+- `GET /api/day-8/progress` - Day 8 progress details
 
 ## Daily Practice
 
@@ -114,6 +120,16 @@ Day 7 practice is focused on:
 - Mapping validation failures to clear `400` responses
 - Preparing async route handlers for future database calls
 - Tracking API reliability checks before deployment
+
+### Day 8
+
+Day 8 practice is focused on:
+
+- Reviewing environment variables before deployment
+- Planning production database connection settings
+- Preparing health checks for hosting platforms
+- Reviewing deployment logs after release
+- Documenting production testing steps
 
 ## How to Run
 
