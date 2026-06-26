@@ -137,6 +137,16 @@ Day 8 practice is focused on:
 - Reviewing deployment logs after release
 - Documenting production testing steps
 
+### Day 9
+
+Day 9 practice is focused on:
+
+- Writing manual test cases for important API routes
+- Checking successful and failed JSON responses
+- Reviewing request logs while calling endpoints
+- Documenting common backend bugs and fixes
+- Planning automated API tests for future routes
+
 ## How to Run
 
 Install dependencies:

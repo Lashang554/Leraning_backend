@@ -97,6 +97,11 @@ const learningTopics = [
     title: "Deployment and production readiness",
     status: "planned",
   },
+  {
+    id: 5,
+    title: "API testing and debugging",
+    status: "planned",
+  },
 ];
 
 app.get("/", (req, res) => {
