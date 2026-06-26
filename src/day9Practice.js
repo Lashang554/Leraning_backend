@@ -87,6 +87,17 @@ function getDay9Checklist() {
   return day9Checklist;
 }
 
+function getDay9Progress() {
+  const completedTasks = day9Tasks.filter((task) => task.completed);
+  const completedChecklistItems = day9Checklist.filter((item) => item.done);
+
+  return {
+    taskProgress: `${completedTasks.length}/${day9Tasks.length}`,
+    checklistProgress: `${completedChecklistItems.length}/${day9Checklist.length}`,
+    nextFocus: "Turn manual route checks into repeatable automated API tests",
+  };
+}
+
 module.exports = {
   day9Tasks,
   day9Checklist,
@@ -94,4 +105,5 @@ module.exports = {
   getDay9Tasks,
   getDay9TaskById,
   getDay9Checklist,
+  getDay9Progress,
 };
