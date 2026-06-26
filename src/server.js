@@ -48,6 +48,8 @@ const {
   getDay9Summary,
   getDay9Tasks,
   getDay9TaskById,
+  getDay9Checklist,
+  getDay9Progress,
 } = require("./day9Practice");
 
 const app = express();
@@ -129,6 +131,8 @@ app.get("/", (req, res) => {
       "/api/day-8/progress",
       "/api/day-9",
       "/api/day-9/tasks",
+      "/api/day-9/checklist",
+      "/api/day-9/progress",
     ],
   });
 });
@@ -409,6 +413,19 @@ app.get("/api/day-9/tasks/:id", (req, res) => {
   }
 
   return res.json(task);
+});
+
+app.get("/api/day-9/checklist", (req, res) => {
+  const checklist = getDay9Checklist();
+
+  res.json({
+    count: checklist.length,
+    checklist,
+  });
+});
+
+app.get("/api/day-9/progress", (req, res) => {
+  res.json(getDay9Progress());
 });
 
 app.listen(PORT, () => {
