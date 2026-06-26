@@ -36,6 +36,29 @@ const day9Tasks = [
   },
 ];
 
+const day9Checklist = [
+  {
+    id: 1,
+    item: "Call summary and task endpoints manually",
+    done: true,
+  },
+  {
+    id: 2,
+    item: "Check one missing task id returns a not-found response",
+    done: true,
+  },
+  {
+    id: 3,
+    item: "Compare server logs with each request",
+    done: false,
+  },
+  {
+    id: 4,
+    item: "List test cases to automate later",
+    done: false,
+  },
+];
+
 function getDay9Summary() {
   const completedCount = day9Tasks.filter((task) => task.completed).length;
 
@@ -60,9 +83,15 @@ function getDay9TaskById(id) {
   return day9Tasks.find((task) => task.id === Number(id));
 }
 
+function getDay9Checklist() {
+  return day9Checklist;
+}
+
 module.exports = {
   day9Tasks,
+  day9Checklist,
   getDay9Summary,
   getDay9Tasks,
   getDay9TaskById,
+  getDay9Checklist,
 };
