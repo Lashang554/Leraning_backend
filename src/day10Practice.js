@@ -36,6 +36,29 @@ const day10Tasks = [
   },
 ];
 
+const day10Checklist = [
+  {
+    id: 1,
+    item: "List fields for each planned MongoDB collection",
+    done: true,
+  },
+  {
+    id: 2,
+    item: "Mark required, optional, and private fields",
+    done: true,
+  },
+  {
+    id: 3,
+    item: "Choose embedded data versus referenced documents",
+    done: false,
+  },
+  {
+    id: 4,
+    item: "Plan indexes for email, owner id, and status filters",
+    done: false,
+  },
+];
+
 function getDay10Summary() {
   return {
     day: 10,
@@ -57,9 +80,15 @@ function getDay10TaskById(id) {
   return day10Tasks.find((task) => task.id === Number(id));
 }
 
+function getDay10Checklist() {
+  return day10Checklist;
+}
+
 module.exports = {
   day10Tasks,
+  day10Checklist,
   getDay10Summary,
   getDay10Tasks,
   getDay10TaskById,
+  getDay10Checklist,
 };
