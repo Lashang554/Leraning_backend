@@ -53,6 +53,8 @@ const {
 } = require("./day9Practice");
 const {
   getDay10Summary,
+  getDay10Tasks,
+  getDay10TaskById,
 } = require("./day10Practice");
 
 const app = express();
@@ -438,6 +440,27 @@ app.get("/api/day-9/progress", (req, res) => {
 
 app.get("/api/day-10", (req, res) => {
   res.json(getDay10Summary());
+});
+
+app.get("/api/day-10/tasks", (req, res) => {
+  const tasks = getDay10Tasks(req.query.topic);
+
+  res.json({
+    count: tasks.length,
+    tasks,
+  });
+});
+
+app.get("/api/day-10/tasks/:id", (req, res) => {
+  const task = getDay10TaskById(req.params.id);
+
+  if (!task) {
+    return res.status(404).json({
+      message: "Task not found",
+    });
+  }
+
+  return res.json(task);
 });
 
 app.listen(PORT, () => {
