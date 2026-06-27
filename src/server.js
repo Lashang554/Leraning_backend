@@ -145,6 +145,10 @@ app.get("/", (req, res) => {
       "/api/day-9/tasks",
       "/api/day-9/checklist",
       "/api/day-9/progress",
+      "/api/day-10",
+      "/api/day-10/tasks",
+      "/api/day-10/checklist",
+      "/api/day-10/progress",
     ],
   });
 });
