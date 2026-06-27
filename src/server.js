@@ -55,6 +55,8 @@ const {
   getDay10Summary,
   getDay10Tasks,
   getDay10TaskById,
+  getDay10Checklist,
+  getDay10Progress,
 } = require("./day10Practice");
 
 const app = express();
@@ -461,6 +463,19 @@ app.get("/api/day-10/tasks/:id", (req, res) => {
   }
 
   return res.json(task);
+});
+
+app.get("/api/day-10/checklist", (req, res) => {
+  const checklist = getDay10Checklist();
+
+  res.json({
+    count: checklist.length,
+    checklist,
+  });
+});
+
+app.get("/api/day-10/progress", (req, res) => {
+  res.json(getDay10Progress());
 });
 
 app.listen(PORT, () => {
