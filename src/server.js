@@ -51,6 +51,9 @@ const {
   getDay9Checklist,
   getDay9Progress,
 } = require("./day9Practice");
+const {
+  getDay10Summary,
+} = require("./day10Practice");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -431,6 +434,10 @@ app.get("/api/day-9/checklist", (req, res) => {
 
 app.get("/api/day-9/progress", (req, res) => {
   res.json(getDay9Progress());
+});
+
+app.get("/api/day-10", (req, res) => {
+  res.json(getDay10Summary());
 });
 
 app.listen(PORT, () => {
