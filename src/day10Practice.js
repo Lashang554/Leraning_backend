@@ -53,8 +53,13 @@ function getDay10Tasks(topic) {
   return day10Tasks.filter((task) => task.topic === topic.toLowerCase());
 }
 
+function getDay10TaskById(id) {
+  return day10Tasks.find((task) => task.id === Number(id));
+}
+
 module.exports = {
   day10Tasks,
   getDay10Summary,
   getDay10Tasks,
+  getDay10TaskById,
 };
