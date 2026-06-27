@@ -60,11 +60,15 @@ const day10Checklist = [
 ];
 
 function getDay10Summary() {
+  const completedCount = day10Tasks.filter((task) => task.completed).length;
+
   return {
     day: 10,
     focus: "MongoDB schema design, relationship planning, indexes, and data validation",
     goal: "Plan database models before connecting the API to a real database",
     totalTasks: day10Tasks.length,
+    completedTasks: completedCount,
+    remainingTasks: day10Tasks.length - completedCount,
   };
 }
 
@@ -84,6 +88,17 @@ function getDay10Checklist() {
   return day10Checklist;
 }
 
+function getDay10Progress() {
+  const completedTasks = day10Tasks.filter((task) => task.completed);
+  const completedChecklistItems = day10Checklist.filter((item) => item.done);
+
+  return {
+    taskProgress: `${completedTasks.length}/${day10Tasks.length}`,
+    checklistProgress: `${completedChecklistItems.length}/${day10Checklist.length}`,
+    nextFocus: "Turn the planned schemas into Mongoose models and connect them to routes",
+  };
+}
+
 module.exports = {
   day10Tasks,
   day10Checklist,
@@ -91,4 +106,5 @@ module.exports = {
   getDay10Tasks,
   getDay10TaskById,
   getDay10Checklist,
+  getDay10Progress,
 };
