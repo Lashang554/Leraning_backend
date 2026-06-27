@@ -64,6 +64,12 @@ A simple Express API is included in `src/server.js`.
 - `GET /api/day-9/tasks/:id` - single Day 9 task by id
 - `GET /api/day-9/checklist` - Day 9 testing checklist
 - `GET /api/day-9/progress` - Day 9 progress details
+- `GET /api/day-10` - Day 10 practice summary
+- `GET /api/day-10/tasks` - Day 10 task list
+- `GET /api/day-10/tasks?topic=schemas` - filter Day 10 tasks by topic
+- `GET /api/day-10/tasks/:id` - single Day 10 task by id
+- `GET /api/day-10/checklist` - Day 10 schema checklist
+- `GET /api/day-10/progress` - Day 10 progress details
 
 ## Daily Practice
 
@@ -146,6 +152,16 @@ Day 9 practice is focused on:
 - Reviewing request logs while calling endpoints
 - Documenting common backend bugs and fixes
 - Planning automated API tests for future routes
+
+### Day 10
+
+Day 10 practice is focused on:
+
+- Planning MongoDB document shapes before writing models
+- Choosing required, optional, and private fields
+- Thinking through embedded data versus referenced documents
+- Identifying indexes for common API lookups
+- Preparing schema decisions for future Mongoose model code
 
 ## How to Run
 
