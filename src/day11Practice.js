@@ -88,6 +88,17 @@ function getDay11Checklist() {
   return day11Checklist;
 }
 
+function getDay11Progress() {
+  const completedTasks = day11Tasks.filter((task) => task.completed);
+  const completedChecklistItems = day11Checklist.filter((item) => item.done);
+
+  return {
+    taskProgress: `${completedTasks.length}/${day11Tasks.length}`,
+    checklistProgress: `${completedChecklistItems.length}/${day11Checklist.length}`,
+    nextFocus: "Install Mongoose and connect these model plans to database-backed routes",
+  };
+}
+
 module.exports = {
   day11Tasks,
   day11Checklist,
@@ -95,4 +106,5 @@ module.exports = {
   getDay11Tasks,
   getDay11TaskById,
   getDay11Checklist,
+  getDay11Progress,
 };
