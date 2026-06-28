@@ -70,6 +70,12 @@ A simple Express API is included in `src/server.js`.
 - `GET /api/day-10/tasks/:id` - single Day 10 task by id
 - `GET /api/day-10/checklist` - Day 10 schema checklist
 - `GET /api/day-10/progress` - Day 10 progress details
+- `GET /api/day-11` - Day 11 practice summary
+- `GET /api/day-11/tasks` - Day 11 task list
+- `GET /api/day-11/tasks?topic=models` - filter Day 11 tasks by topic
+- `GET /api/day-11/tasks/:id` - single Day 11 task by id
+- `GET /api/day-11/checklist` - Day 11 model checklist
+- `GET /api/day-11/progress` - Day 11 progress details
 
 ## Daily Practice
 
@@ -162,6 +168,16 @@ Day 10 practice is focused on:
 - Thinking through embedded data versus referenced documents
 - Identifying indexes for common API lookups
 - Preparing schema decisions for future Mongoose model code
+
+### Day 11
+
+Day 11 practice is focused on:
+
+- Turning planned document shapes into model files
+- Adding schema fields with clear data types
+- Choosing required fields and validation rules
+- Enabling timestamps for database records
+- Preparing model exports for future database-backed routes
 
 ## How to Run
 
