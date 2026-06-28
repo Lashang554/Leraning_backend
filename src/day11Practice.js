@@ -49,7 +49,16 @@ function getDay11Summary() {
   };
 }
 
+function getDay11Tasks(topic) {
+  if (!topic) {
+    return day11Tasks;
+  }
+
+  return day11Tasks.filter((task) => task.topic === topic.toLowerCase());
+}
+
 module.exports = {
   day11Tasks,
   getDay11Summary,
+  getDay11Tasks,
 };
