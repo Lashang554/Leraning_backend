@@ -84,10 +84,15 @@ function getDay11TaskById(id) {
   return day11Tasks.find((task) => task.id === Number(id));
 }
 
+function getDay11Checklist() {
+  return day11Checklist;
+}
+
 module.exports = {
   day11Tasks,
   day11Checklist,
   getDay11Summary,
   getDay11Tasks,
   getDay11TaskById,
+  getDay11Checklist,
 };
