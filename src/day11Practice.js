@@ -36,6 +36,29 @@ const day11Tasks = [
   },
 ];
 
+const day11Checklist = [
+  {
+    id: 1,
+    item: "Create one model file per main resource",
+    done: true,
+  },
+  {
+    id: 2,
+    item: "Add schema fields with clear data types",
+    done: true,
+  },
+  {
+    id: 3,
+    item: "Mark required fields before testing routes",
+    done: false,
+  },
+  {
+    id: 4,
+    item: "Review private fields before returning JSON",
+    done: false,
+  },
+];
+
 function getDay11Summary() {
   const completedCount = day11Tasks.filter((task) => task.completed).length;
 
@@ -63,6 +86,7 @@ function getDay11TaskById(id) {
 
 module.exports = {
   day11Tasks,
+  day11Checklist,
   getDay11Summary,
   getDay11Tasks,
   getDay11TaskById,
