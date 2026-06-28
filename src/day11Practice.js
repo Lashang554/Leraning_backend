@@ -1,4 +1,40 @@
-const day11Tasks = [];
+const day11Tasks = [
+  {
+    id: 1,
+    title: "Create model files for users, notes, and learning tasks",
+    topic: "models",
+    difficulty: "beginner",
+    completed: true,
+  },
+  {
+    id: 2,
+    title: "Add required fields and simple validation rules",
+    topic: "validation",
+    difficulty: "beginner",
+    completed: true,
+  },
+  {
+    id: 3,
+    title: "Enable timestamps for created and updated records",
+    topic: "timestamps",
+    difficulty: "beginner",
+    completed: false,
+  },
+  {
+    id: 4,
+    title: "Choose private fields to hide from API responses",
+    topic: "security",
+    difficulty: "intermediate",
+    completed: false,
+  },
+  {
+    id: 5,
+    title: "Export models so routes can use them later",
+    topic: "exports",
+    difficulty: "intermediate",
+    completed: false,
+  },
+];
 
 function getDay11Summary() {
   const completedCount = day11Tasks.filter((task) => task.completed).length;
