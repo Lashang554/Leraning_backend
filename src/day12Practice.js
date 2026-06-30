@@ -36,6 +36,29 @@ const day12Tasks = [
   },
 ];
 
+const day12Checklist = [
+  {
+    id: 1,
+    item: "Store the database URL outside source code",
+    done: true,
+  },
+  {
+    id: 2,
+    item: "Keep a local fallback database name for development",
+    done: true,
+  },
+  {
+    id: 3,
+    item: "Log database connection status during startup",
+    done: false,
+  },
+  {
+    id: 4,
+    item: "Stop startup when the database connection fails",
+    done: false,
+  },
+];
+
 function getDay12Summary() {
   const completedCount = day12Tasks.filter((task) => task.completed).length;
 
@@ -61,9 +84,15 @@ function getDay12TaskById(id) {
   return day12Tasks.find((task) => task.id === Number(id));
 }
 
+function getDay12Checklist() {
+  return day12Checklist;
+}
+
 module.exports = {
   day12Tasks,
+  day12Checklist,
   getDay12Summary,
   getDay12Tasks,
   getDay12TaskById,
+  getDay12Checklist,
 };
