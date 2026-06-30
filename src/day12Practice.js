@@ -88,6 +88,17 @@ function getDay12Checklist() {
   return day12Checklist;
 }
 
+function getDay12Progress() {
+  const completedTasks = day12Tasks.filter((task) => task.completed);
+  const completedChecklistItems = day12Checklist.filter((item) => item.done);
+
+  return {
+    taskProgress: `${completedTasks.length}/${day12Tasks.length}`,
+    checklistProgress: `${completedChecklistItems.length}/${day12Checklist.length}`,
+    nextFocus: "Install Mongoose and wire a real connection helper into server startup",
+  };
+}
+
 module.exports = {
   day12Tasks,
   day12Checklist,
@@ -95,4 +106,5 @@ module.exports = {
   getDay12Tasks,
   getDay12TaskById,
   getDay12Checklist,
+  getDay12Progress,
 };
