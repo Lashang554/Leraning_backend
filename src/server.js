@@ -169,6 +169,8 @@ app.get("/", (req, res) => {
       "/api/day-11/progress",
       "/api/day-12",
       "/api/day-12/tasks",
+      "/api/day-12/checklist",
+      "/api/day-12/progress",
     ],
   });
 });
@@ -563,6 +565,19 @@ app.get("/api/day-12/tasks/:id", (req, res) => {
   }
 
   return res.json(task);
+});
+
+app.get("/api/day-12/checklist", (req, res) => {
+  const checklist = getDay12Checklist();
+
+  res.json({
+    count: checklist.length,
+    checklist,
+  });
+});
+
+app.get("/api/day-12/progress", (req, res) => {
+  res.json(getDay12Progress());
 });
 
 app.listen(PORT, () => {
