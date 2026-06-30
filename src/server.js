@@ -168,6 +168,7 @@ app.get("/", (req, res) => {
       "/api/day-11/checklist",
       "/api/day-11/progress",
       "/api/day-12",
+      "/api/day-12/tasks",
     ],
   });
 });
@@ -541,6 +542,27 @@ app.get("/api/day-11/progress", (req, res) => {
 
 app.get("/api/day-12", (req, res) => {
   res.json(getDay12Summary());
+});
+
+app.get("/api/day-12/tasks", (req, res) => {
+  const tasks = getDay12Tasks(req.query.topic);
+
+  res.json({
+    count: tasks.length,
+    tasks,
+  });
+});
+
+app.get("/api/day-12/tasks/:id", (req, res) => {
+  const task = getDay12TaskById(req.params.id);
+
+  if (!task) {
+    return res.status(404).json({
+      message: "Task not found",
+    });
+  }
+
+  return res.json(task);
 });
 
 app.listen(PORT, () => {
