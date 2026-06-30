@@ -65,6 +65,13 @@ const {
   getDay11Checklist,
   getDay11Progress,
 } = require("./day11Practice");
+const {
+  getDay12Summary,
+  getDay12Tasks,
+  getDay12TaskById,
+  getDay12Checklist,
+  getDay12Progress,
+} = require("./day12Practice");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -160,6 +167,7 @@ app.get("/", (req, res) => {
       "/api/day-11/tasks",
       "/api/day-11/checklist",
       "/api/day-11/progress",
+      "/api/day-12",
     ],
   });
 });
@@ -529,6 +537,10 @@ app.get("/api/day-11/checklist", (req, res) => {
 
 app.get("/api/day-11/progress", (req, res) => {
   res.json(getDay11Progress());
+});
+
+app.get("/api/day-12", (req, res) => {
+  res.json(getDay12Summary());
 });
 
 app.listen(PORT, () => {
