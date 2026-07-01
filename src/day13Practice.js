@@ -88,6 +88,17 @@ function getDay13Checklist() {
   return day13Checklist;
 }
 
+function getDay13Progress() {
+  const completedTasks = day13Tasks.filter((task) => task.completed);
+  const completedChecklistItems = day13Checklist.filter((item) => item.done);
+
+  return {
+    taskProgress: `${completedTasks.length}/${day13Tasks.length}`,
+    checklistProgress: `${completedChecklistItems.length}/${day13Checklist.length}`,
+    nextFocus: "Create a real seed script after Mongoose is connected to the project",
+  };
+}
+
 module.exports = {
   day13Tasks,
   day13Checklist,
@@ -95,4 +106,5 @@ module.exports = {
   getDay13Tasks,
   getDay13TaskById,
   getDay13Checklist,
+  getDay13Progress,
 };
