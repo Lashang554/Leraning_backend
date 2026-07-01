@@ -616,6 +616,19 @@ app.get("/api/day-13/tasks/:id", (req, res) => {
   return res.json(task);
 });
 
+app.get("/api/day-13/checklist", (req, res) => {
+  const checklist = getDay13Checklist();
+
+  res.json({
+    count: checklist.length,
+    checklist,
+  });
+});
+
+app.get("/api/day-13/progress", (req, res) => {
+  res.json(getDay13Progress());
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
