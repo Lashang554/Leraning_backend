@@ -36,6 +36,29 @@ const day13Tasks = [
   },
 ];
 
+const day13Checklist = [
+  {
+    id: 1,
+    item: "Choose realistic sample users and learning tasks",
+    done: true,
+  },
+  {
+    id: 2,
+    item: "Keep fake passwords and private data out of seed records",
+    done: true,
+  },
+  {
+    id: 3,
+    item: "Plan collection cleanup before inserting seed data",
+    done: false,
+  },
+  {
+    id: 4,
+    item: "Document how to run the seed script locally",
+    done: false,
+  },
+];
+
 function getDay13Summary() {
   const completedCount = day13Tasks.filter((task) => task.completed).length;
 
@@ -61,9 +84,15 @@ function getDay13TaskById(id) {
   return day13Tasks.find((task) => task.id === Number(id));
 }
 
+function getDay13Checklist() {
+  return day13Checklist;
+}
+
 module.exports = {
   day13Tasks,
+  day13Checklist,
   getDay13Summary,
   getDay13Tasks,
   getDay13TaskById,
+  getDay13Checklist,
 };
