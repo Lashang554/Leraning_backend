@@ -595,6 +595,27 @@ app.get("/api/day-13", (req, res) => {
   res.json(getDay13Summary());
 });
 
+app.get("/api/day-13/tasks", (req, res) => {
+  const tasks = getDay13Tasks(req.query.topic);
+
+  res.json({
+    count: tasks.length,
+    tasks,
+  });
+});
+
+app.get("/api/day-13/tasks/:id", (req, res) => {
+  const task = getDay13TaskById(req.params.id);
+
+  if (!task) {
+    return res.status(404).json({
+      message: "Task not found",
+    });
+  }
+
+  return res.json(task);
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
