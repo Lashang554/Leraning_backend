@@ -76,6 +76,18 @@ A simple Express API is included in `src/server.js`.
 - `GET /api/day-11/tasks/:id` - single Day 11 task by id
 - `GET /api/day-11/checklist` - Day 11 model checklist
 - `GET /api/day-11/progress` - Day 11 progress details
+- `GET /api/day-12` - Day 12 practice summary
+- `GET /api/day-12/tasks` - Day 12 task list
+- `GET /api/day-12/tasks?topic=environment` - filter Day 12 tasks by topic
+- `GET /api/day-12/tasks/:id` - single Day 12 task by id
+- `GET /api/day-12/checklist` - Day 12 database checklist
+- `GET /api/day-12/progress` - Day 12 progress details
+- `GET /api/day-13` - Day 13 practice summary
+- `GET /api/day-13/tasks` - Day 13 task list
+- `GET /api/day-13/tasks?topic=seed-data` - filter Day 13 tasks by topic
+- `GET /api/day-13/tasks/:id` - single Day 13 task by id
+- `GET /api/day-13/checklist` - Day 13 seed data checklist
+- `GET /api/day-13/progress` - Day 13 progress details
 
 ## Daily Practice
 
