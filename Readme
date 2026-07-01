@@ -191,6 +191,26 @@ Day 11 practice is focused on:
 - Enabling timestamps for database records
 - Preparing model exports for future database-backed routes
 
+### Day 12
+
+Day 12 practice is focused on:
+
+- Reading MongoDB connection strings from environment variables
+- Creating reusable database connection helpers
+- Handling successful and failed database startup attempts
+- Starting the Express server after the database is ready
+- Documenting local and production database setup steps
+
+### Day 13
+
+Day 13 practice is focused on:
+
+- Planning realistic seed data for local development
+- Choosing sample records that are safe to keep in the project
+- Preparing repeatable database reset and seed workflows
+- Deciding when seed scripts should run automatically
+- Documenting cleanup rules before reseeding collections
+
 ## How to Run
 
 Install dependencies:
