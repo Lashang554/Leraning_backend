@@ -88,6 +88,12 @@ A simple Express API is included in `src/server.js`.
 - `GET /api/day-13/tasks/:id` - single Day 13 task by id
 - `GET /api/day-13/checklist` - Day 13 seed data checklist
 - `GET /api/day-13/progress` - Day 13 progress details
+- `GET /api/day-14` - Day 14 practice summary
+- `GET /api/day-14/tasks` - Day 14 task list
+- `GET /api/day-14/tasks?topic=controllers` - filter Day 14 tasks by topic
+- `GET /api/day-14/tasks/:id` - single Day 14 task by id
+- `GET /api/day-14/checklist` - Day 14 architecture checklist
+- `GET /api/day-14/progress` - Day 14 progress details
 
 ## Daily Practice
 
@@ -210,6 +216,16 @@ Day 13 practice is focused on:
 - Preparing repeatable database reset and seed workflows
 - Deciding when seed scripts should run automatically
 - Documenting cleanup rules before reseeding collections
+
+### Day 14
+
+Day 14 practice is focused on:
+
+- Planning controller files for resource route handlers
+- Separating server startup from route logic
+- Creating service helpers for reusable database actions
+- Deciding which errors belong in controllers or middleware
+- Documenting folder structure before real database-backed routes
 
 ## How to Run
 
