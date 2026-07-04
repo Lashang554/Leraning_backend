@@ -233,6 +233,16 @@ Day 14 practice is focused on:
 - Deciding which errors belong in controllers or middleware
 - Documenting folder structure before real database-backed routes
 
+### Day 15
+
+Day 15 practice is focused on:
+
+- Creating feature routers for related API endpoints
+- Keeping route files focused on paths and middleware order
+- Designing controller actions for common CRUD behavior
+- Planning validation rules before accepting request bodies
+- Connecting route modules to future database service helpers
+
 ## How to Run
 
 Install dependencies:
