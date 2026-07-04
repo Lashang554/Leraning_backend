@@ -94,6 +94,12 @@ A simple Express API is included in `src/server.js`.
 - `GET /api/day-14/tasks/:id` - single Day 14 task by id
 - `GET /api/day-14/checklist` - Day 14 architecture checklist
 - `GET /api/day-14/progress` - Day 14 progress details
+- `GET /api/day-15` - Day 15 practice summary
+- `GET /api/day-15/tasks` - Day 15 task list
+- `GET /api/day-15/tasks?topic=routers` - filter Day 15 tasks by topic
+- `GET /api/day-15/tasks/:id` - single Day 15 task by id
+- `GET /api/day-15/checklist` - Day 15 route organization checklist
+- `GET /api/day-15/progress` - Day 15 progress details
 
 ## Daily Practice
 
