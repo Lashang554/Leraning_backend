@@ -100,6 +100,12 @@ A simple Express API is included in `src/server.js`.
 - `GET /api/day-15/tasks/:id` - single Day 15 task by id
 - `GET /api/day-15/checklist` - Day 15 route organization checklist
 - `GET /api/day-15/progress` - Day 15 progress details
+- `GET /api/day-16` - Day 16 practice summary
+- `GET /api/day-16/tasks` - Day 16 task list
+- `GET /api/day-16/tasks?topic=services` - filter Day 16 tasks by topic
+- `GET /api/day-16/tasks/:id` - single Day 16 task by id
+- `GET /api/day-16/checklist` - Day 16 service layer checklist
+- `GET /api/day-16/progress` - Day 16 progress details
 
 ## Daily Practice
 
@@ -242,6 +248,16 @@ Day 15 practice is focused on:
 - Designing controller actions for common CRUD behavior
 - Planning validation rules before accepting request bodies
 - Connecting route modules to future database service helpers
+
+### Day 16
+
+Day 16 practice is focused on:
+
+- Creating service helpers for reusable data actions
+- Keeping database logic out of controller functions
+- Planning service return values for success and missing records
+- Deciding which validation checks happen before service calls
+- Preparing service functions for future async database queries
 
 ## How to Run
 
