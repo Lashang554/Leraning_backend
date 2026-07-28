@@ -106,6 +106,12 @@ A simple Express API is included in `src/server.js`.
 - `GET /api/day-16/tasks/:id` - single Day 16 task by id
 - `GET /api/day-16/checklist` - Day 16 service layer checklist
 - `GET /api/day-16/progress` - Day 16 progress details
+- `GET /api/day-17` - Day 17 practice summary
+- `GET /api/day-17/tasks` - Day 17 task list
+- `GET /api/day-17/tasks?topic=validation` - filter Day 17 tasks by topic
+- `GET /api/day-17/tasks/:id` - single Day 17 task by id
+- `GET /api/day-17/checklist` - Day 17 validation checklist
+- `GET /api/day-17/progress` - Day 17 progress details
 
 ## Daily Practice
 
@@ -258,6 +264,16 @@ Day 16 practice is focused on:
 - Planning service return values for success and missing records
 - Deciding which validation checks happen before service calls
 - Preparing service functions for future async database queries
+
+### Day 17
+
+Day 17 practice is focused on:
+
+- Creating validation helpers before controller actions run
+- Returning clear messages for missing required request fields
+- Keeping controllers focused on request parsing and responses
+- Letting services report not-found results without choosing status codes
+- Planning reusable validation rules for future create and update routes
 
 ## How to Run
 
