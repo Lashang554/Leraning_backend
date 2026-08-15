@@ -36,6 +36,30 @@ const day18Tasks = [
   },
 ];
 
+const day18Checklist = [
+  {
+    id: 1,
+    item: "Send clients a stable error message and HTTP status code",
+    done: true,
+  },
+  {
+    id: 2,
+    item: "Place the error-handling middleware after all routes",
+    done: true,
+  },
+  {
+    id: 3,
+    item: "Log unexpected errors with enough request context to debug them",
+    done: false,
+  },
+  {
+    id: 4,
+    item: "Avoid exposing internal implementation details to API clients",
+    done: false,
+  },
+];
+
 module.exports = {
   day18Tasks,
+  day18Checklist,
 };
