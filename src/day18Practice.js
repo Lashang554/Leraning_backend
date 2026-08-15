@@ -59,7 +59,52 @@ const day18Checklist = [
   },
 ];
 
+function getDay18Summary() {
+  const completedCount = day18Tasks.filter((task) => task.completed).length;
+
+  return {
+    day: 18,
+    focus: "Centralized Express error handling, safe client messages, and async error planning",
+    goal: "Make API failures consistent, useful, and safe before adding database-backed routes",
+    totalTasks: day18Tasks.length,
+    completedTasks: completedCount,
+    remainingTasks: day18Tasks.length - completedCount,
+  };
+}
+
+function getDay18Tasks(topic) {
+  if (!topic) {
+    return day18Tasks;
+  }
+
+  return day18Tasks.filter((task) => task.topic === topic.toLowerCase());
+}
+
+function getDay18TaskById(id) {
+  return day18Tasks.find((task) => task.id === Number(id));
+}
+
+function getDay18Checklist() {
+  return day18Checklist;
+}
+
+function getDay18Progress() {
+  const completedTasks = day18Tasks.filter((task) => task.completed);
+  const completedChecklistItems = day18Checklist.filter((item) => item.done);
+
+  return {
+    taskProgress: `${completedTasks.length}/${day18Tasks.length}`,
+    checklistProgress: `${completedChecklistItems.length}/${day18Checklist.length}`,
+    nextFocus: "Add centralized error middleware to a feature router",
+  };
+}
+
 module.exports = {
   day18Tasks,
   day18Checklist,
+  getDay18Summary,
+  getDay18Tasks,
+  getDay18TaskById,
+  getDay18Checklist,
+  getDay18Progress,
 };
