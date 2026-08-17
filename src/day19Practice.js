@@ -71,3 +71,15 @@ function getDay19Summary() {
     remainingTasks: day19Tasks.length - completedCount,
   };
 }
+
+function getDay19Tasks(topic) {
+  if (!topic) {
+    return day19Tasks;
+  }
+
+  return day19Tasks.filter((task) => task.topic === topic.toLowerCase());
+}
+
+function getDay19TaskById(id) {
+  return day19Tasks.find((task) => task.id === Number(id));
+}
