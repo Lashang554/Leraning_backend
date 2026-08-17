@@ -83,3 +83,28 @@ function getDay19Tasks(topic) {
 function getDay19TaskById(id) {
   return day19Tasks.find((task) => task.id === Number(id));
 }
+
+function getDay19Checklist() {
+  return day19Checklist;
+}
+
+function getDay19Progress() {
+  const completedTasks = day19Tasks.filter((task) => task.completed);
+  const completedChecklistItems = day19Checklist.filter((item) => item.done);
+
+  return {
+    taskProgress: `${completedTasks.length}/${day19Tasks.length}`,
+    checklistProgress: `${completedChecklistItems.length}/${day19Checklist.length}`,
+    nextFocus: "Add response status and duration to the request logger",
+  };
+}
+
+module.exports = {
+  day19Tasks,
+  day19Checklist,
+  getDay19Summary,
+  getDay19Tasks,
+  getDay19TaskById,
+  getDay19Checklist,
+  getDay19Progress,
+};
