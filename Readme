@@ -118,6 +118,12 @@ A simple Express API is included in `src/server.js`.
 - `GET /api/day-18/tasks/:id` - single Day 18 task by id
 - `GET /api/day-18/checklist` - Day 18 error handling checklist
 - `GET /api/day-18/progress` - Day 18 progress details
+- `GET /api/day-19` - Day 19 practice summary
+- `GET /api/day-19/tasks` - Day 19 task list
+- `GET /api/day-19/tasks?topic=request-logging` - filter Day 19 tasks by topic
+- `GET /api/day-19/tasks/:id` - single Day 19 task by id
+- `GET /api/day-19/checklist` - Day 19 observability checklist
+- `GET /api/day-19/progress` - Day 19 progress details
 
 ## Daily Practice
 
@@ -290,6 +296,16 @@ Day 18 practice is focused on:
 - Protecting internal details such as stack traces from production responses
 - Mapping validation failures to clear client messages
 - Preparing error handling for future async database operations
+
+### Day 19
+
+Day 19 practice is focused on:
+
+- Logging API request methods and paths for debugging
+- Recording response status codes and request duration in production logs
+- Keeping passwords, tokens, and private payload data out of logs
+- Planning structured log fields for production monitoring tools
+- Using observability data to investigate API failures and slow routes
 
 ## How to Run
 
