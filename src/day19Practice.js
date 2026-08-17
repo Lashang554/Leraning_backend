@@ -35,3 +35,26 @@ const day19Tasks = [
     completed: false,
   },
 ];
+
+const day19Checklist = [
+  {
+    id: 1,
+    item: "Record the request method and path for each API call",
+    done: true,
+  },
+  {
+    id: 2,
+    item: "Keep sensitive values out of application logs",
+    done: true,
+  },
+  {
+    id: 3,
+    item: "Capture response status and duration for debugging",
+    done: false,
+  },
+  {
+    id: 4,
+    item: "Use a consistent log format that production tools can parse",
+    done: false,
+  },
+];
