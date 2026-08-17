@@ -58,3 +58,16 @@ const day19Checklist = [
     done: false,
   },
 ];
+
+function getDay19Summary() {
+  const completedCount = day19Tasks.filter((task) => task.completed).length;
+
+  return {
+    day: 19,
+    focus: "Request logging, safe observability, response timing, and structured log planning",
+    goal: "Make API behavior visible without exposing sensitive data",
+    totalTasks: day19Tasks.length,
+    completedTasks: completedCount,
+    remainingTasks: day19Tasks.length - completedCount,
+  };
+}
