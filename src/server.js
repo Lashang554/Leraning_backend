@@ -885,6 +885,44 @@ app.get("/api/day-18/progress", (req, res) => {
   res.json(getDay18Progress());
 });
 
+app.get("/api/day-19", (req, res) => {
+  res.json(getDay19Summary());
+});
+
+app.get("/api/day-19/tasks", (req, res) => {
+  const tasks = getDay19Tasks(req.query.topic);
+
+  res.json({
+    count: tasks.length,
+    tasks,
+  });
+});
+
+app.get("/api/day-19/tasks/:id", (req, res) => {
+  const task = getDay19TaskById(req.params.id);
+
+  if (!task) {
+    return res.status(404).json({
+      message: "Task not found",
+    });
+  }
+
+  return res.json(task);
+});
+
+app.get("/api/day-19/checklist", (req, res) => {
+  const checklist = getDay19Checklist();
+
+  res.json({
+    count: checklist.length,
+    checklist,
+  });
+});
+
+app.get("/api/day-19/progress", (req, res) => {
+  res.json(getDay19Progress());
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
