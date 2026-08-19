@@ -59,4 +59,17 @@ const day20Checklist = [
   },
 ];
 
-module.exports = { day20Tasks, day20Checklist };
+function getDay20Summary() {
+  const completedCount = day20Tasks.filter((task) => task.completed).length;
+
+  return {
+    day: 20,
+    focus: "Access control, input validation, rate limiting, CORS, and safe response data",
+    goal: "Reduce API attack surface before adding authentication and database-backed routes",
+    totalTasks: day20Tasks.length,
+    completedTasks: completedCount,
+    remainingTasks: day20Tasks.length - completedCount,
+  };
+}
+
+module.exports = { day20Tasks, day20Checklist, getDay20Summary };
