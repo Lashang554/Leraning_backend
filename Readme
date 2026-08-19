@@ -124,6 +124,12 @@ A simple Express API is included in `src/server.js`.
 - `GET /api/day-19/tasks/:id` - single Day 19 task by id
 - `GET /api/day-19/checklist` - Day 19 observability checklist
 - `GET /api/day-19/progress` - Day 19 progress details
+- `GET /api/day-20` - Day 20 practice summary
+- `GET /api/day-20/tasks` - Day 20 task list
+- `GET /api/day-20/tasks?topic=access-control` - filter Day 20 tasks by topic
+- `GET /api/day-20/tasks/:id` - single Day 20 task by id
+- `GET /api/day-20/checklist` - Day 20 API security checklist
+- `GET /api/day-20/progress` - Day 20 progress details
 
 ## Daily Practice
 
@@ -306,6 +312,16 @@ Day 19 practice is focused on:
 - Keeping passwords, tokens, and private payload data out of logs
 - Planning structured log fields for production monitoring tools
 - Using observability data to investigate API failures and slow routes
+
+### Day 20
+
+Day 20 practice is focused on:
+
+- Identifying public and protected API routes before authentication is added
+- Validating request data before it reaches application logic
+- Planning rate limits for sensitive or expensive endpoints
+- Restricting browser access to trusted origins with CORS configuration
+- Reviewing API responses to prevent accidental exposure of private data
 
 ## How to Run
 
