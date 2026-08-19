@@ -72,4 +72,27 @@ function getDay20Summary() {
   };
 }
 
-module.exports = { day20Tasks, day20Checklist, getDay20Summary };
+function getDay20Tasks(topic) {
+  if (!topic) {
+    return day20Tasks;
+  }
+
+  return day20Tasks.filter((task) => task.topic === topic.toLowerCase());
+}
+
+function getDay20TaskById(id) {
+  return day20Tasks.find((task) => task.id === Number(id));
+}
+
+function getDay20Checklist() {
+  return day20Checklist;
+}
+
+module.exports = {
+  day20Tasks,
+  day20Checklist,
+  getDay20Summary,
+  getDay20Tasks,
+  getDay20TaskById,
+  getDay20Checklist,
+};
