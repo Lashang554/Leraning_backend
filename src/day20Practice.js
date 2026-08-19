@@ -88,6 +88,17 @@ function getDay20Checklist() {
   return day20Checklist;
 }
 
+function getDay20Progress() {
+  const completedTasks = day20Tasks.filter((task) => task.completed);
+  const completedChecklistItems = day20Checklist.filter((item) => item.done);
+
+  return {
+    taskProgress: `${completedTasks.length}/${day20Tasks.length}`,
+    checklistProgress: `${completedChecklistItems.length}/${day20Checklist.length}`,
+    nextFocus: "Add authentication middleware and rate limits to sensitive API routes",
+  };
+}
+
 module.exports = {
   day20Tasks,
   day20Checklist,
@@ -95,4 +106,5 @@ module.exports = {
   getDay20Tasks,
   getDay20TaskById,
   getDay20Checklist,
+  getDay20Progress,
 };
