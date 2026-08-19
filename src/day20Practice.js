@@ -36,4 +36,27 @@ const day20Tasks = [
   },
 ];
 
-module.exports = { day20Tasks };
+const day20Checklist = [
+  {
+    id: 1,
+    item: "Define which routes require an authenticated user",
+    done: true,
+  },
+  {
+    id: 2,
+    item: "Validate and normalize incoming request data",
+    done: true,
+  },
+  {
+    id: 3,
+    item: "Set rate limits for sensitive and expensive routes",
+    done: false,
+  },
+  {
+    id: 4,
+    item: "Allow browser requests only from trusted origins",
+    done: false,
+  },
+];
+
+module.exports = { day20Tasks, day20Checklist };
