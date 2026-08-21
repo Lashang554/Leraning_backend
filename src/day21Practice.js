@@ -36,6 +36,44 @@ const day21Tasks = [
   },
 ];
 
+const day21Checklist = [
+  {
+    id: 1,
+    item: "Store a password hash instead of the original password",
+    done: true,
+  },
+  {
+    id: 2,
+    item: "Return only safe user fields after a successful sign-in",
+    done: true,
+  },
+  {
+    id: 3,
+    item: "Verify a token before allowing access to protected routes",
+    done: false,
+  },
+  {
+    id: 4,
+    item: "Check a user's role before privileged write operations",
+    done: false,
+  },
+];
+
+function getDay21Summary() {
+  const completedCount = day21Tasks.filter((task) => task.completed).length;
+
+  return {
+    day: 21,
+    focus: "Authentication basics, password safety, token design, protected routes, and authorization",
+    goal: "Prepare a safe authentication flow before implementing user accounts and protected resources",
+    totalTasks: day21Tasks.length,
+    completedTasks: completedCount,
+    remainingTasks: day21Tasks.length - completedCount,
+  };
+}
+
 module.exports = {
   day21Tasks,
+  day21Checklist,
+  getDay21Summary,
 };
