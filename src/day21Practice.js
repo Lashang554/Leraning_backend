@@ -72,8 +72,39 @@ function getDay21Summary() {
   };
 }
 
+function getDay21Tasks(topic) {
+  if (!topic) {
+    return day21Tasks;
+  }
+
+  return day21Tasks.filter((task) => task.topic === topic.toLowerCase());
+}
+
+function getDay21TaskById(id) {
+  return day21Tasks.find((task) => task.id === Number(id));
+}
+
+function getDay21Checklist() {
+  return day21Checklist;
+}
+
+function getDay21Progress() {
+  const completedTasks = day21Tasks.filter((task) => task.completed);
+  const completedChecklistItems = day21Checklist.filter((item) => item.done);
+
+  return {
+    taskProgress: `${completedTasks.length}/${day21Tasks.length}`,
+    checklistProgress: `${completedChecklistItems.length}/${day21Checklist.length}`,
+    nextFocus: "Add sign-in validation and token-verification middleware to protected routes",
+  };
+}
+
 module.exports = {
   day21Tasks,
   day21Checklist,
   getDay21Summary,
+  getDay21Tasks,
+  getDay21TaskById,
+  getDay21Checklist,
+  getDay21Progress,
 };
