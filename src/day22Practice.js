@@ -59,7 +59,52 @@ const day22Checklist = [
   },
 ];
 
+function getDay22Summary() {
+  const completedCount = day22Tasks.filter((task) => task.completed).length;
+
+  return {
+    day: 22,
+    focus: "Authentication middleware, bearer-token handling, protected routes, and role checks",
+    goal: "Apply authentication and authorization checks consistently before protected API actions run",
+    totalTasks: day22Tasks.length,
+    completedTasks: completedCount,
+    remainingTasks: day22Tasks.length - completedCount,
+  };
+}
+
+function getDay22Tasks(topic) {
+  if (!topic) {
+    return day22Tasks;
+  }
+
+  return day22Tasks.filter((task) => task.topic === topic.toLowerCase());
+}
+
+function getDay22TaskById(id) {
+  return day22Tasks.find((task) => task.id === Number(id));
+}
+
+function getDay22Checklist() {
+  return day22Checklist;
+}
+
+function getDay22Progress() {
+  const completedTasks = day22Tasks.filter((task) => task.completed);
+  const completedChecklistItems = day22Checklist.filter((item) => item.done);
+
+  return {
+    taskProgress: `${completedTasks.length}/${day22Tasks.length}`,
+    checklistProgress: `${completedChecklistItems.length}/${day22Checklist.length}`,
+    nextFocus: "Attach verified user data and add role checks to protected write routes",
+  };
+}
+
 module.exports = {
   day22Tasks,
   day22Checklist,
+  getDay22Summary,
+  getDay22Tasks,
+  getDay22TaskById,
+  getDay22Checklist,
+  getDay22Progress,
 };
