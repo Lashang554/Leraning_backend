@@ -142,6 +142,12 @@ A simple Express API is included in `src/server.js`.
 - `GET /api/day-22/tasks/:id` - single Day 22 task by id
 - `GET /api/day-22/checklist` - Day 22 authentication middleware checklist
 - `GET /api/day-22/progress` - Day 22 progress details
+- `GET /api/day-23` - Day 23 practice summary
+- `GET /api/day-23/tasks` - Day 23 task list
+- `GET /api/day-23/tasks?topic=role-design` - filter Day 23 tasks by topic
+- `GET /api/day-23/tasks/:id` - single Day 23 task by id
+- `GET /api/day-23/checklist` - Day 23 authorization checklist
+- `GET /api/day-23/progress` - Day 23 progress details
 
 ## Daily Practice
 
@@ -354,6 +360,16 @@ Day 22 practice is focused on:
 - Preparing verified user data for protected route handlers
 - Separating role checks from token-verification middleware
 - Keeping tokens and private user details out of logs
+
+### Day 23
+
+Day 23 practice is focused on:
+
+- Defining clear roles for protected API actions
+- Creating reusable middleware for role and permission checks
+- Returning safe `403 Forbidden` responses for unauthorized actions
+- Protecting privileged write routes while keeping public reads available
+- Reviewing sensitive role changes and actions for audit logging
 
 ## How to Run
 
